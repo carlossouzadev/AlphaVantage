@@ -4,6 +4,8 @@ To start the server:
 php -S localhost:8000 -t public/
 
 APIS:
+
+
 http://localhost:8000/api/users (POST) - will create user on our DB.
 example: on body , send : {
   "email": "test@test.net"
