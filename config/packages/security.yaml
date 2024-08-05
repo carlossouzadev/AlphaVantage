@@ -1,0 +1,34 @@
+security:
+    providers:
+        jwt:
+            lexik_jwt: ~
+
+    firewalls:
+        login:
+            pattern: ^/login/jwt/{id}
+            stateless: true
+            json_login:
+                check_path: /login/jwt/{id}
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+
+        api:
+            pattern:   ^/api
+            stateless: true
+            jwt: ~
+
+        history:
+            pattern: ^/api
+            stateless: true
+            jwt: ~
+
+        stock:
+            pattern: ^/api
+            stateless: true
+            jwt: ~
+
+    access_control:
+        - { path: ^/api,       roles: PUBLIC_ACCESS }
+        - { path: ^/stock,     roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/history,   roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/login/jwt/,   roles: IS_AUTHENTICATED_ANONYMOUSLY }

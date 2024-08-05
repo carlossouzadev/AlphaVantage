@@ -1,0 +1,13 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+stock_data:
+    path: /stock/{symbol}
+    controller: App\Controller\StockController::getStockData
+
+history_data:
+    path: /history
+    controller: App\Controller\HistoryController::getHistoryData
