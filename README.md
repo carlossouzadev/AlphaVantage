@@ -20,3 +20,6 @@ IMPORTANT: basic Auth is needed - send Username as the email registered
 
 http://localhost:8000/stock/%symbol% (GET) - will return the actual data from API stock
 IMPORTANT: basic Auth is needed - send Username as the email registered
+
+
+Don't forget to rename .env.example to .env, and fill the correct values to APP_SECRET, and credencials for MAILER_DSN (for test propouses I recomend mailtrap)
