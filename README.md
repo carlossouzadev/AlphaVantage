@@ -1,5 +1,8 @@
 # AlphaVantage
 
+Prepare the image
+docker compose up --pull always -d --wait
+
 To start the server:
 php -S localhost:8000 -t public/
 
